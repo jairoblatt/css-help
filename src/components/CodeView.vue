@@ -4,12 +4,12 @@
       <p>Copied to clipboard</p>
     </div>
     <div class="code" v-for="(item,i) in items" :key="i">
-      <span class="code-color-1"> {{item.name}}</span>
-      <span class="code-color-3"> {{item.value}}</span>
+      <span class="code-color-1">{{item.name}}</span>
+      <span class="code-color-3">{{item.value}}</span>
     </div>
     <div class="clipboard">
       <button type="button" @click="doCopy">
-        <v-icon :class="`${copy?'check':''}`">{{copy? 'mdi-check': 'mdi-arrange-bring-forward'}}</v-icon>
+        <v-icon :class="`${copy ?'check':''}`">{{copy? 'mdi-check': 'mdi-arrange-bring-forward'}}</v-icon>
       </button>
     </div>
   </div>
@@ -17,7 +17,6 @@
 <script>
 export default {
   data: () => ({
-    teste: "testando aqui meuy deus",
     copy: false,
   }),
   props: {
@@ -26,19 +25,19 @@ export default {
       default: false,
     },
   },
+
   computed: {
-    test() {
-      let string = new Array();
+    codeFilter() {
+      const code = [];
       this.items.forEach((e) => {
-        string.push(`${e.name} ${e.value}`);
+        code.push(e.name + e.value)
       });
-      string[0].concat("aehoo");
-      return string;
-    },
+      return code.join(" ");
+    }
   },
   methods: {
     doCopy() {
-      this.$copyText(this.test).then((resp) => {
+      this.$copyText(this.codeFilter).then((resp) => {
         this.copy = true;
         setTimeout(() => {
           this.copy = false;

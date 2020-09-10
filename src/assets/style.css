@@ -151,7 +151,8 @@ a{
     margin-top: 20px;
 }
 .check {
-    color:rgb(2, 184, 2) !important; 
+    z-index: 99;
+    color: #4A148C !important; 
 }
 .code-container{
     position: relative;
