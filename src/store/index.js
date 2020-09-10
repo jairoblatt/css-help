@@ -7,7 +7,7 @@ Vue.use(Vuex)
 
 export const state = {
 //     BOX SHADOW     
-    fade: 10,
+    blur: 10,
     spread:10,
     axisY:10,
     axisX:10,
@@ -32,7 +32,7 @@ export const state = {
 
 export const getters = {
 //     BOX SHADOW     
-        fade: state => state.fade,
+        blur: state => state.blur,
         inset: state => state.inset,
         color: state => state.color,
         axisY: state => state.axisY,
@@ -57,8 +57,8 @@ export const getters = {
 
 export const mutations = {
 //     BOX SHADOW     
-        fade(state, payload){
-                state.fade = payload
+        blur(state, payload){
+                state.blur = payload
         },
 
         inset(state, payload){

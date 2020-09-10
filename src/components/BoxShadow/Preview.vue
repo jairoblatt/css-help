@@ -15,11 +15,11 @@ import CodeView from "../CodeView";
 export default {
   components: { CodeView },
   computed: {
-    ...mapGetters(["inset", "fade", "spread", "axisY", "axisX", "color"]),
+    ...mapGetters(["inset", "blur", "spread", "axisY", "axisX", "color"]),
     boxShadow() {
       return `${this.inset ? "inset" : ""} ${this.color}  ${this.axisX}px ${
         this.axisY
-      }px ${this.fade}px  ${this.spread}px`;
+      }px ${this.blur}px  ${this.spread}px`;
     },
   },
 };
